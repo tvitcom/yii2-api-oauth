@@ -14,6 +14,36 @@ GET /users — должен возвращать список пользоват
 Так же реализовать авторизацию с помощью Google Account-а.
 API должно быть закрыто bearer авторизацией.
 
+## prerequisit:
+
+linux: ubuntu 18,16... or debian 7, 8, 9, 10
+php 7.2 && apache2.4 or nginx && mariadb5.x or mysql 5.x
+
+# Setup for development
+
+```
+mkdir -m 777 -p /var/www/yii2-api-oauth/approot
+cd /var/www/yii2-api-oauth/approot
+git clone git@github.com:tvitcom/yii2-api-oauth .
+curl -sS https://getcomposer.org/installer | php;
+php composer.phar update
+sudo chmod -R 0777 frontend/assets/ \
+    frontend/runtime/ \
+    backend/assets/ \   
+    rest/runtime \
+    rest/assets \  
+    backend/runtime/ \
+    web/assets  \
+    web/admin/assets \
+    web/api/assets;
+!!! Please setup appropriate configs files in common/config, console/config, backend/config, rest/config, frontend/config
+!!! Please make web server config for webroot:
+/var/www/yii2-api-oauth/approot/web
+Ready!
+```
+
+# Deploy for production
+
 # Application architecture: 
 In this project implemented Yii 2 Advanced Project includes three tiers: front end, back end, console and api part of web application
 
@@ -59,7 +89,7 @@ rest
     runtime/             contains files generated during runtime
     tests/               contains tests for backend application    
     views/               contains view files for the Web application
-    frontend/web/apiX/   contains the entry script for appropriate api version
+    frontend/web/apiX/   contains the entry script for appropriate api version: X (semver condition)
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
