@@ -11,7 +11,11 @@ REMOTE_USER="abc";
 LOCAL_PATH='/var/www/ownassets/'; # !!! With slash
 REMOTE_PATH='/var/www/htdocs/';   # !!! With slash
 
-php ./yii cache/flush-all
+if [ -f /usr/bin/php ];then
+    php ./yii cache/flush-all;
+else
+    echo "Error: PHP is not available!!!";
+fi
 
 #Delete frontend: web/assets files:
 sudo mkdir -m 777 $TMPPATH 
