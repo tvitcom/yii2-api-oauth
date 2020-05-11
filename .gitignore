@@ -43,5 +43,6 @@ phpunit.phar
 /backend/web/robots.txt
 
 # ignore secured files, keys and bakups
+/common/config/main-local.php
 /deploy_to_prod.sh
 /data/secured
