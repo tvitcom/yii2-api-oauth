@@ -21,6 +21,8 @@ php 7.2 && apache2.4 or nginx && mariadb5.x or mysql 5.x
 
 # Setup for development
 
+Run bash commands:
+
 ```
 mkdir -m 777 -p /var/www/yii2-api-oauth/approot
 cd /var/www/yii2-api-oauth/approot
@@ -36,13 +38,22 @@ sudo chmod -R 0777 frontend/assets/ \
     web/assets  \
     web/admin/assets \
     web/api/assets;
+
+### Notices
 !!! Please setup appropriate configs files in common/config, console/config, backend/config, rest/config, frontend/config
 !!! Please make web server config for webroot:
 /var/www/yii2-api-oauth/approot/web
+!!! Rename _deploy_to_prod.sh and set appropriate variables in deploy_to_prod.sh 
 Ready!
 ```
 
 # Deploy for production
+
+From developer host:
+
+```bash
+sh deploy_to_prod.sh
+```
 
 # Application architecture: 
 In this project implemented Yii 2 Advanced Project includes three tiers: front end, back end, console and api part of web application
