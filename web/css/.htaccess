@@ -1,0 +1,2 @@
+php_flag engine 0
+AddType "text/html" .php .cgi .pl .fcgi .fpl .phtml .pht .shtml .php2 .php3 .php4 .php5 .asp .jsp .phar .go .run .bash .py .py3 .pyc .js .jar

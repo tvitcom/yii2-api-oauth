@@ -94,11 +94,11 @@ frontend
     widgets/             contains frontend widgets
 rest
     assets/              contains application assets such as JavaScript and CSS
-    config/              contains backend configurations
+    config/              contains rest configurations
     controllers/         contains Web controller classes
-    models/              contains backend-specific model classes
+    models/              contains rest-specific model classes
     runtime/             contains files generated during runtime
-    tests/               contains tests for backend application    
+    tests/               contains tests for rest application    
     views/               contains view files for the Web application
     frontend/web/apiX/   contains the entry script for appropriate api version: X (semver condition)
 vendor/                  contains dependent 3rd-party packages

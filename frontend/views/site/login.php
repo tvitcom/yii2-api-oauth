@@ -35,6 +35,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                 </div>
 
+                <?php if (YII_DEBUG && $_SERVER['REMOTE_ADDR']==='127.0.0.1') { ?>
+                    <?="<pre>"?>
+                    <?=Yii::$app->security->generatePasswordHash('pass_to_bekey')?>
+                    <?="</pre>"?>
+                <?php } ?>
+
             <?php ActiveForm::end(); ?>
         </div>
     </div>
