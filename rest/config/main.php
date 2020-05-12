@@ -8,15 +8,12 @@ $params = array_merge(
 
 return [
     'id' => 'app-rest',
-    'name' => 'My REST Application - RESTAPI',
+    'name' => 'My REST Application - REST',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'rest\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
-        'request' => [
-            'csrfParam' => '_csrf-rest',
-        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
@@ -38,22 +35,23 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
-        'urlManager' => [
+            'baseUrl' => '',
             'enablePrettyUrl' => true,
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'users'],
+                [
+                    'class' => 'yii\rest\UrlRule', 
+                    'pluralize' =>'false',
+                    'controller' => 'users',
             ],
-        ]
+        ],
+        'request' => [
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
+        ],
     ],
     'params' => $params,
 ];

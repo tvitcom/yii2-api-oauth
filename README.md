@@ -104,3 +104,21 @@ rest
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+
+# Test and debug
+
+Test json GET response w/o PrettyUrl:
+
+```bash
+
+curl -X GET http://bekey/index.php?r=users -H 'content-type: application/json'
+
+```
+
+Test json GET response with PrettyUrl:
+
+```bash
+
+curl -X GET http://bekey/users -H 'content-type: application/json'
+
+```

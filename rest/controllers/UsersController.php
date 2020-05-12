@@ -1,10 +1,10 @@
 <?php
 
 namespace rest\controllers;
-
+ 
 use yii\rest\ActiveController;
-
-class UserController extends ActiveController
+ 
+class UsersController extends ActiveController
 {
-    public $modelClass = 'rest\models\Users';
+    public $modelClass = 'common\models\Users';
 }
